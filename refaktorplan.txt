@@ -1,0 +1,61 @@
+Dela upp server och skrapningsverktyg i två olika delar.
+
+GENERELLT:
+
+tillgång till require???? hur fan?
+
+
+
+
+//////////////////////////
+///////// Server /////////
+//////////////////////////
+
+Obligatoriskt:
+Servern har en egen require av databasen, hämtar egen information.
+Servern har egna funktioner som hämtar data från databasen.
+
+
+
+/////////////////////////////
+//////// Skrapning //////////
+/////////////////////////////
+
+Skrapningsverktyg är uppdelat i mappar, en för varje sida som ska skrapas.
+varje mapp har en index.js, test.js och mapping.json.
+
+mapping.json innehåller information om länken som ska skrapas. det är till för att
+underlätta modulariteten hos filerna.
+
+index.js innehåller den specifika skrapningsinformationen och returnar en lista av
+javascriptobjekt med recepten + länkar från hemsidan.
+
+test.js testar och loggar så att allt går rätt till.
+
+
+
+/////////////////////////////
+/////// Databas /////////////
+/////////////////////////////
+
+Fundera över index. hur placera i databasen?
+
+Fundera över hash table, hur effektivisera koden?
+
+Abstraktion vs klarhet i koden, vad är mest värt.
+Det måste finnas loggskrivning så att man kan se dels hur många recept som är lagrade
+och dels vilka recept som är lagrade, samt kanske antal sidor som paginerats igenom.
+
+
+DATABASFÖRSLAG:
+en funktion itererar över varje hemsida
+asynkroniserad funktion
+gör en OPS över databas, varje hemsida lägger in i databasen på form "[länkhemsida]00X"
+hämta hemsideinfon från sites.json
+varje sådan ops slutar på en beskrivning av hur MÅNGA länkar som finns sparade på den platsen där hemsidan är
+
+det innebär att servern får slumpa ca 2 gånger:
+hemsida, ex "vegokoll" -> hämta antal länkar -> slumpa fram ett länkindex -> hämta fram namn + länk
+från "[länksida]" + "länkindex" -> skicka till klienten.
+
+borde vara enkelt, smidigt, iterervänligt och smidigt.
