@@ -4,7 +4,7 @@
 var rawScrapeDataToDbOps = function(folderName) {
   return new Promise(function(resolve, reject) {
 
-    var site = require("./" + folderName + "/index.js");
+    var site = require("./lib/" + folderName + "/index.js");
 
     site.scrapeWebsite().then(function(listOfScrapedRecipes) {
         var ops = [];
