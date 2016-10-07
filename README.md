@@ -14,7 +14,6 @@ Recept och receptlänk läggs in i en databas.
 - matklubben och mytaste kan inte skrapas, fixa
 
 #### Att-göra:
-- Skapa en server
 - Lägg in recepten och länkarna i databasen
 
 ##### Löpande:
