@@ -17,7 +17,7 @@ var rawScrapeDataToDbOps = function(folderName) {
 
         for (index in listOfScrapedRecipes) {
 
-          var linkIndex = folderName + index.toString();
+          var linkIndex = folderName + "link" + index.toString();
           var recipeIndex = folderName + index.toString();
 
           tempRecipeOps = {

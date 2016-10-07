@@ -1,5 +1,5 @@
 var middleware = require("./middleware.js");
 
-middleware.rawScrapeDataToDbOps("tasteline").then(function(results) {
+middleware.rawScrapeDataToDbOps("vegokoll").then(function(results) {
   console.log(results);
 });
