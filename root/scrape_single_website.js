@@ -10,5 +10,5 @@ OpsFromMiddleWare.rawScrapeDataToDbOps(websiteName[0]).then(function(ops) {
   Database.batch(ops, function (err) {
       if (err) { return console.log('Ooops!', err); }
       console.log('All recipes succesfully stored!');
-      });
+  });
 });
