@@ -1,4 +1,4 @@
-var available = require(__dirname + "/available-sites.json");
+var available = require("./available-sites.json");
 var sites = available["available-sites"];
 
 /*
@@ -34,7 +34,7 @@ scrapeSite() returns an array of recipe-objects and
 returns the result
 */
 function scrape(site) {
-    var scrapeSite = require(__dirname + "/" + site + "/index");
+    var scrapeSite = require(__dirname + "/" + site);
     return scrapeSite().then(result => {
         result = result.map(recipe => {
             recipe.site = site;

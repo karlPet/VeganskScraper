@@ -1,8 +1,8 @@
 var mongoose = require("mongoose");
 
 
-var Recipe = require(__dirname + "/../model/recipe-model");
-var scraper = require(__dirname + "/sites/scraper");
+var Recipe = require("./model/recipe-model");
+var scraper = require("./sites/scraper");
 
 /*
  * Mongoose by default sets the auto_reconnect option to true.
