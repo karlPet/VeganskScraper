@@ -53,9 +53,19 @@ scraper().then(recipeData => {
 });
 
 function schemifyData(recipe) {
-    return new Recipe({
-        name: recipe.recipeName,
-        url: recipe.recipeLink,
-        site: recipe.site
-    });
+
+    if (recipe.recipeImage) {
+        return new Recipe({
+            name: recipe.recipeName,
+            url: recipe.recipeLink,
+            imgurl: recipe.recipeImage,
+            site: recipe.site,
+        });
+    } else {
+        return new Recipe({
+            name: recipe.recipeName,
+            url: recipe.recipeLink,
+            site: recipe.site,
+        });
+    }
 }

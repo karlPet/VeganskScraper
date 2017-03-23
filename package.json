@@ -4,6 +4,7 @@
   "description": "Skrapar veganska recept från webben",
   "main": "save-to-mongodb.js",
   "scripts": {
+    "start": "node save-to-mongodb",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
