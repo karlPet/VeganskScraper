@@ -1,3 +1,11 @@
 {
-  "links": [ "http://www.tasteline.com/mat/?sok=vegan#sok" ]
+  "links": [ "http://www.tasteline.com/mat/?sok=vegan#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=2#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=3#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=4#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=5#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=6#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=7#sok",
+      "http://www.tasteline.com/mat/?sok=vegan&sida=8#sok"
+   ]
 }
