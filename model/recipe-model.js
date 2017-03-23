@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-var random = require('mongoose-simple-random');
 
 /*
 recipeSchema is a data model for the mongodb storage.
@@ -18,27 +17,6 @@ var recipeSchema = mongoose.Schema({
   site: { type: String, require: true },
   createdAt: { type: Date, default: Date.now }
 });
-
-/*
-getRecipe returns data from mongodb storage,
-in the form of:
-- name the name of the recipe
-- url the web adress to the recipe
-- site the site the recipe is scraped from (example: "koket")
-*/
-recipeSchema.methods.getRecipe = function () {
-  return { name: this.name,
-    url: this.url,
-    site: this.site
-  };
-};
-
-/*
-We have to plugin a package to the mongoose model, so we can later
-use the package to get a random Recipe from the mongolab database.
-Check routes.js, and look up "mongoose-simple-random" npm package
-*/
-recipeSchema.plugin(random);
 
 var Recipe = mongoose.model("Recipe", recipeSchema);
 module.exports = Recipe;
