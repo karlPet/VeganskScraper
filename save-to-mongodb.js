@@ -25,12 +25,13 @@ var options = {
     }
 };
 
-var mongodbUri = 'mongodb://admin:admin@ds053186.mlab.com:53186/veganrecipes';
+var mongodbUri = 'mongodb://admin:admin@ds141450.mlab.com:41450/veganrecipes';
 
 mongoose.connect(mongodbUri, options);
 
 scraper().then(recipeData => {
     let fails = 0;
+    console.log(recipeData);
     const batch = recipeData
         .map(recipe => schemifyData(recipe))
         .map(recipe => new Promise((resolve, reject) => recipe.save(err => {
@@ -65,6 +66,7 @@ function schemifyData(recipe) {
         return new Recipe({
             name: recipe.recipeName,
             url: recipe.recipeLink,
+            imgurl: "",
             site: recipe.site,
         });
     }
