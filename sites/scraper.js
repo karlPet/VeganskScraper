@@ -23,7 +23,7 @@ returns a recipeData array of recipe objects.
 */
 var scrapeRecipes = () => new Promise((resolve, reject) => {
 
-    Promise.all(sites.map(site => scrape(site)))
+    Promise.all(sites.map(scrape))
         .then(recipeData => resolve(recipeData.reduce((a, b) => a.concat(b)) // reduce just merges all arrays of recipes into one array
         ));
 });

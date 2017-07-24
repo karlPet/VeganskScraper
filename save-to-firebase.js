@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 scraper().then(recipeData => {
-
+    
     recipeData.filter(recipe => recipe.recipeName)
     .map(recipeBody => schemifyData(recipeBody))
     .map(recipe => {

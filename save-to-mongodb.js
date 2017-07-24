@@ -33,7 +33,7 @@ scraper().then(recipeData => {
     let fails = 0;
     console.log(recipeData);
     const batch = recipeData
-        .map(recipe => schemifyData(recipe))
+        .map(schemifyData)
         .map(recipe => new Promise((resolve, reject) => recipe.save(err => {
             if (err) {
                 fails += 1;
@@ -44,7 +44,7 @@ scraper().then(recipeData => {
         })));
     return Promise.all(batch)
         .then(() => {
-            console.log(fails, "failed saves. This is usually because of 'duplicate' entries, and should therefore be ignored.");
+            console.log(fails, " failed saves. This is usually because of 'duplicate' entries, and should therefore be ignored.");
             process.exit();
         })
         .catch((err) => {

@@ -15,6 +15,7 @@ var recipeSchema = mongoose.Schema({
   url: { type: String, required: true, unique: true },
   imgurl: { type: String, required: false},
   site: { type: String, require: true },
+  rate:{type:Number, default:0},
   createdAt: { type: Date, default: Date.now }
 });
 
